@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Prueba File</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<form id="formulario" method="POST" action="upload2.php" enctype="multipart/form-data" >
+        <label for="imagen">Seleciona la imagen que quieres subir</label>
+        <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+        <input type="file" accept="image/*" id="imagen" name="imagen"/>
+               
+        <label for="marcagua">Seleciona la marca de agua que quieres poner</label>
+        <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+        <input type="file" accept="image/*" id="marcagua" name="marcagua"/>
+		
+		<label for="prueba">Escribe algo para probar:</label>
+        <input id="prueba" type="text" name="prueba" value="prueba">
+                
+        <button class="btn btn-primary" type="submit" id="Enviar" name="Enviar">Enviar</button> 
+    </form>
+	
+</body>
+</html>

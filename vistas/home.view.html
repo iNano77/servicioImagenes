@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="text-center">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¡Hola! Soy Nano y con este servicio podras añadir marcas de agua a las imagenes que quieras!!</p>
+        <p>¡ ¡ ¡ D I S F R Ú T A L O ! ! !</p>
+        <div class="text-center">
+            <form id="formulario" method="POST" action="php/upload.php" enctype="multipart/form-data" >
+                <label for="imagen">Seleciona la imagen que quieres subir</label>
+                <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+                <input type="file" accept="image/*" id="imagen" name="imagen" select-ng-files ng-model="imagen" multiple/>
+               
+                <label for="marcagua">Seleciona la marca de agua que quieres poner</label>
+                <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+                <input type="file" accept="image/*" id="marcagua" name="marcagua" select-ng-files ng-model="marcagua" multiple/>
+                
+                <button class="btn btn-primary" type="submit" id="Enviar" name="Enviar" ng-click="subir()" >Enviar</button>
+                <a type="button" class="btn btn-primary" ng-click="mezclar()" ng-href="#servicio">Ver imagenes</a> 
+            </form>
+        </div>
+    </div>
+    <div id="imagenes" class="col-md-12">
+        <div class="center">
+    <h1>Estas son las imagenes que has subido</h1>
+</div>
+<div class="center">
+    <img ng-src="./images/upload/{{miImagen}}" alt="imagen">
+    <img ng-src="./images/upload/{{miMarcagua}}" alt="marca de agua">
+    <img ng-src="./images/mezclas/{{miImagen}}" alt="mezcla">
+</div>
+    </div>
+</div>
+<div id="volver" class="row">
+  <center><a href="javascript:history.back(-1);" title="Ir la página anterior">Volver</a></center>
+</div>
