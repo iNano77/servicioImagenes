@@ -1,7 +1,7 @@
 <?php
 //echo "Esto es el archivo upload.php:";
 
-$dir_subida = '/Applications/MAMP/htdocs/servicioImages/images/upload/';
+$dir_subida = getRutaproyecto().'./images/upload/';
 
 $nombre_imagen=$_FILES['imagen']['name'];
 $nombre_marcagua=$_FILES['marcagua']['name'];
@@ -40,7 +40,8 @@ if (move_uploaded_file($_FILES['marcagua']['tmp_name'], $fichero_marcagua)){
 
 
 //Directorio donde están las imagenes subidas
-$dir='/Applications/MAMP/htdocs/servicioImages/images/mezclas/';
+
+$dir= getRutaproyecto().'./images/mezclas/';
 
 //recogemos los nombres de los archivos que vamos a usar
 $imagen=$nombre_imagen;
@@ -91,4 +92,18 @@ $respuesta =  [
     "mezcla" => "$ruta_mezcla"
     ];
 echo json_encode($respuesta);
+
+
+function getRutaproyecto(){
+	{
+		$ruta_fichero = __FILE__;
+		// Quitamos los /php/upload.php ( 14 caracteres),
+		$ruta_proyecto = substr($ruta_ficheroe,0,-15);
+		return $ruta_proyecto;
+			
+	}
+
+
+}
+
 ?>
