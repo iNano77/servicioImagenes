@@ -1,7 +1,7 @@
 <?php
 //echo "Esto es el archivo upload.php:";
 
-$dir_subida = getRutaproyecto().'./images/upload/';
+$dir_subida = getRutaproyecto().'/images/upload/';
 
 $nombre_imagen=$_FILES['imagen']['name'];
 $nombre_marcagua=$_FILES['marcagua']['name'];
@@ -41,7 +41,7 @@ if (move_uploaded_file($_FILES['marcagua']['tmp_name'], $fichero_marcagua)){
 
 //Directorio donde están las imagenes subidas
 
-$dir= getRutaproyecto().'./images/mezclas/';
+$dir= getRutaproyecto().'/images/mezclas/';
 
 //recogemos los nombres de los archivos que vamos a usar
 $imagen=$nombre_imagen;
@@ -98,7 +98,7 @@ function getRutaproyecto(){
 	{
 		$ruta_fichero = __FILE__;
 		// Quitamos los /php/upload.php ( 14 caracteres),
-		$ruta_proyecto = substr($ruta_ficheroe,0,-15);
+		$ruta_proyecto = substr($ruta_fichero,0,-15);
 		return $ruta_proyecto;
 			
 	}
