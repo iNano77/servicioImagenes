@@ -15,7 +15,7 @@
             $scope.miMarcagua =$scope.marcagua[0].name;
             
             var peticion = {
-                "url" : "../php/upload.php",
+                "url" : "./php/upload.php",
                 "method" : "POST" 
             }
             $http(peticion).then(function(fueBien){                
